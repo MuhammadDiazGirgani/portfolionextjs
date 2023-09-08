@@ -1,0 +1,106 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+body {
+    @apply max-w-[90%] w-[1080px] mx-auto;
+    background-color: #cbd5e1;
+}
+
+.profil2 {
+    margin-left: 715px;
+}
+
+#contact {
+    margin-top: -490px;
+}
+
+.kolom {
+    background: linear-gradient(200deg, #fff, #b3c2d8);
+    background-size: 400% 400%;
+    -webkit-animation: AnimationName 8s ease infinite;
+    -moz-animation: AnimationName 8s ease infinite;
+    -o-animation: AnimationName 8s ease infinite;
+    animation: AnimationName 8s ease infinite;
+}
+
+@-webkit-keyframes AnimationName {
+    0% {
+        background-position: 78% 0%
+    }
+    50% {
+        background-position: 23% 100%
+    }
+    100% {
+        background-position: 78% 0%
+    }
+}
+
+@-moz-keyframes AnimationName {
+    0% {
+        background-position: 78% 0%
+    }
+    50% {
+        background-position: 23% 100%
+    }
+    100% {
+        background-position: 78% 0%
+    }
+}
+
+@-o-keyframes AnimationName {
+    0% {
+        background-position: 78% 0%
+    }
+    50% {
+        background-position: 23% 100%
+    }
+    100% {
+        background-position: 78% 0%
+    }
+}
+
+@keyframes AnimationName {
+    0% {
+        background-position: 78% 0%
+    }
+    50% {
+        background-position: 23% 100%
+    }
+    100% {
+        background-position: 78% 0%
+    }
+}
+
+@media screen and (max-width: 586px) {
+    .profil2 {
+        margin-top: -2273px;
+        margin-left: 200px;
+    }
+    #contact {
+        margin-top: -15px;
+    }
+    #projects {
+        margin-top: 10px;
+    }
+}
+
+@media screen and (max-width: 420px) {
+    .profil2 {
+        margin-top: -2273px;
+        margin-left: 110px;
+    }
+}
+
+@media screen and (max-width: 441px) {
+    .profil2 {
+        margin-top: -2273px;
+        margin-left: 215px;
+    }
+}
+
+@media screen and (max-width: 435px) {
+    .profil2 {
+        margin-top: -2273px;
+        margin-left: 205px;
+    }
+}
