@@ -6,9 +6,8 @@ import Instagram from "../../public/instagram.svg";
 import Twitter from "../../public/twitter.svg";
 import Linkedin from "../../public/linkedin.svg";
 import SocialButton from "../../components/SocialButton";
-import ReactDOM from 'react-dom';
 import Tilt from 'react-parallax-tilt';
-
+import Image from "next/image"
 
 
 export default function Home() {
@@ -27,11 +26,10 @@ export default function Home() {
       <section className="grid grid-cols-1 lg:grid-cols-[2fr_1fr] gap-4 mb-4 " >
         <div className="bg-zinc-400 h-[30rem] rounded-3xl min-h-max p-10 flex flex-col gap-7 bg-cover kolom ">
           <h1 className="text-4xl font-semibold lg:text-5xl">
-            Hello, I&lsquo;m  Diaz, Web Development and Designer Web.
+            Hello, I&lsquo;m  Diaz , Web Development and Designer Web.
           </h1>
           <p className="flex-1">
-            I care a lot about using design for positive impact and enjoy
-            creating user-centric, delightful, and human experiences.
+          I am an active Student passionate about front-end development, specializing in React.js and Next.js, to create responsive and user-friendly interfaces. With strong skills in API data retrieval, I enjoy building applications that provide dynamic, real-time data to users. I want to gain more hands-on experience in this field and look for opportunities that align with my technical and soft skills, especially in front-end development. My goal is to work in an environment where I can continuously learn, contribute effectively, and grow as a developer.
           </p>
           <div className="flex flex-col lg:flex-row items-center gap-4 justify-self-end">
             <a href="mailto:diazdgirgani93@gmai.com">
@@ -56,7 +54,7 @@ export default function Home() {
                 <Twitter className="w-5 h-5" />
               </SocialButton>
               </a>
-              <a href="#">
+              <a href="https://www.linkedin.com/in/muhammad-diaz-girgani-10ab4130b/" target="_blank">
               <SocialButton bgColor="linkedin">
                 <Linkedin className="w-5 h-5" />
               </SocialButton>
@@ -64,22 +62,26 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <div className="h-[17rem] w-[11.5rem] rounded-3xl lg:h-[30rem] lg:w-[23rem] p-8  bg-[url('/profile.jpg')] hover:bg-[url('/profile2.jpg')] duration-500 bg-cover bg-center " />
-        
+        <div className="grid grid-cols-2 sm:grid-cols-1 md:grid-cols-1 gap-1">
+        <div className="h-[17rem] w-[11.5rem] rounded-3xl lg:h-[30rem] lg:w-[23rem] p-8 bg-[url('/profile.jpg')] hover:bg-[url('/profile2.jpg')] duration-500 bg-cover bg-center " />
+  <div className="h-[17rem] w-[11.5rem] rounded-3xl lg:h-[30rem] lg:w-[23rem] p-8 bg-[url('/profile3.jpg')] hover:bg-[url('/profile4.jpg')] duration-500 bg-cover bg-center lg:hidden" />
+</div>
+
       </section>
 
       
       <section className="project grid grid-cols-1 lg:grid-cols-2 gap-4 my-4 " id="projects">
  
-      <Tilt>
+      <Tilt> 
+        <a href="https://www.turnedin.id/home/" target="_blank">
         <ProjectPreview
-        
-          name="Zakatkeun App"
-          description="web application for zakat built with html, css, javascript, php, mysql, bootstrap."
+       
+          name="Turnedin"
+          description="Turnitin web is specifically for students with friendly prices using ReactJS and Bootstrap 5"
           imageUrl="/project-1.png"
-          bgColor="#242f49"
+          bgColor="#222F64"
           dark
-        />
+        /></a>
     </Tilt>
   
     <Tilt>
@@ -95,48 +97,79 @@ export default function Home() {
         </a>
         </Tilt>
         <Tilt>
+        <a href="https://reactmovielist.vercel.app/" target="_blank">
         <ProjectPreview
-          name="Portfolio "
-          description="This is my first portfolio using html and css only "
+        
+          name="Movielist "
+          description="web movielist to see the latest film list by fetching the TMDB API using ReactJS and Bootstrap"
           imageUrl="/project-3.png"
-          bgColor="#001B26"
+          bgColor="#000000"
           dark
         />
-     </Tilt>
-     <div className="skill">
-     <Tilt>
-        <ProjectPreview
-          name="Skills "
-          description="This is my skill, but some languages ​​are still being learned"
-          imageUrl="/project-4.png"
-          bgColor="#b3c2d8"
-          
-        />
+        </a>
+        </Tilt>
+        <section className="grid grid-cols-1 lg:grid-cols-40 gap-10 " id="skills">
+        <h1 className="text-3xl font-semibold lg:text-3xl text-center ">Skills</h1>
+  <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-4 gap-4">
+    {[
+      { name: "HTML", imageUrl: "/icons/html.png", bgColor: "#f16529" },
+      { name: "CSS", imageUrl: "/icons/css.png", bgColor: "#2965f1" },
+      { name: "JavaScript", imageUrl: "/icons/js.png", bgColor: "#ffce00" },
+      { name: "PHP", imageUrl: "/icons/php.png", bgColor: "#8892BF" },
+      { name: "MySQL", imageUrl: "/icons/mysql.png", bgColor: "#00758F" },
+      { name: "React.js", imageUrl: "/icons/react.png", bgColor: "#058cb0" },
+      { name: "TypeScript", imageUrl: "/icons/tsx.png", bgColor: "#3178c6" },
+      { name: "Laravel", imageUrl: "/icons/laravel.png", bgColor: "#af3824" },
+      { name: "MongoDB", imageUrl: "/icons/mongodb.png", bgColor: "#216222" },
+      { name: "Bootstrap", imageUrl: "/icons/bootstrap.png", bgColor: "#452c6a" },
+      { name: "Tailwind CSS", imageUrl: "/icons/tailwind.png", bgColor: "#0a6671" },
+      { name: "Jquery", imageUrl: "/icons/jquery.png", bgColor: "#4192cc" },
+    ].map((skill, index) => (
+      <Tilt key={index}>
+        <div
+          className="flex flex-col items-center justify-center shadow-lg"
+          style={{
+            backgroundColor: skill.bgColor,
+            width: "120px", // Lebar tetap
+            height: "120px", // Panjang tetap
+            borderRadius: "20px", // Rounded corners
+          }}
+        >
+          <Image
+            src={skill.imageUrl}
+            alt={skill.name}
+            width={50}
+            height={50}
+            className="object-contain mb-2"
+          />
+          <h3 className="text-sm font-medium text-white text-center">{skill.name}</h3>
+        </div>
         
-</Tilt>
-</div>
-<div className="h-[17rem] w-[11.5rem] rounded-3xl lg:h-[30rem] lg:w-[23rem] p-8  bg-[url('/profile3.jpg')] hover:bg-[url('/profile4.jpg')] duration-500 bg-cover bg-center profil2" />
-      </section>
-      <section className="grid grid-cols-1 lg:grid-cols-[2fr_1fr] gap-4 mb-4" id="contact" >
+      </Tilt>
+      
+    ))}
+  </div>
+  
+</section>
 
-        <div className="h-[30rem] lg:w-[43.5rem] rounded-3xl min-h-max p-10 flex flex-col gap-7 kolom">
-          
-          <h1 className="text-4xl font-semibold lg:text-5xl">
+</section>
+    
+<section className="grid grid-cols-1 lg:grid-cols-[2fr_1fr] gap-4 mb-4 " >
+        <div className="bg-zinc-400 h-[30rem] rounded-3xl min-h-max p-10 flex flex-col gap-7 bg-cover kolom " >
+          <h3 className="text-4xl font-semibold lg:text-5xl">
           Want to work together?
-          </h1>
+          </h3>
           <p className="flex-1">
           Feel free to reach out for collaborations or just a friendly hello
-          <p className="mt-6">
-diazdgirgani93@gmail.com</p>
+          diazdgirgani93@gmail.com
           </p>
-         
-          <div className="flex flex-col lg:flex-row items-center gap-4 justify-self-end  ">
-          <a href="mailto:diazdgirgani93@gmai.com">
-            <button className="bg-black text-white font-medium  py-3 px-12 rounded-full w-60 lg:w-auto hover:bg-slate-600 transition duration-500">
-              Contact me
-            </button>
+    
+          <div className="flex flex-col lg:flex-row items-center gap-4 justify-self-end" >
+            <a href="mailto:diazdgirgani93@gmai.com">
             </a>
-            <div className="flex items-center gap-4 " >
+            <div className="contact"></div>
+              <div className="flex items-center gap-4 contact" >
+                
               <a href="https://github.com/MuhammadDiazGirgani" target="_blank">
                 <SocialButton bgColor="github">
                 <Dribbble className="w-5 h-5" />
@@ -147,21 +180,58 @@ diazdgirgani93@gmail.com</p>
                 <Instagram className="w-5 h-5" />
               </SocialButton>
               </a>
-           
+              <a href="#">
               <SocialButton bgColor="twitter">
                 <Twitter className="w-5 h-5" />
               </SocialButton>
-             
-             
+              </a>
+              <a href="https://www.linkedin.com/in/muhammad-diaz-girgani-10ab4130b/" target="_blank">
               <SocialButton bgColor="linkedin">
                 <Linkedin className="w-5 h-5" />
               </SocialButton>
-            
+              </a>
+              
             </div>
+                  {/* Tombol Play Music */}
+    <div className="flex items-center gap-4">
+      <button
+        className="bg-green-500 text-white font-medium py-1 px-12 rounded-full w-60 lg:w-auto hover:bg-green-700 transition duration-500"
+        onClick={() => {
+          const audio = document.getElementById("audioPlayer") as HTMLAudioElement;
+          if (audio.paused) {
+            audio.play();
+          } else {
+            audio.pause();
+          }
+        }}
+      >
+        Play Music
+      </button>
+
+
+      <span id="musicStatus" className="text-lg text-gray-700">
+
+      </span>
+    </div>
+
+    <audio
+      id="audioPlayer"
+      src="/music/soundtrack.mp3"
+      onPlay={() => {
+        const status = document.getElementById("musicStatus");
+        if (status) status.textContent = "Playing...";
+      }}
+      onPause={() => {
+        const status = document.getElementById("musicStatus");
+        if (status) status.textContent = "Paused.";
+      }}
+    />
           </div>
         </div>
-       
+        <div className="h-[17rem] w-[11.5rem] rounded-3xl lg:h-[30rem] lg:w-[23rem] p-8 bg-[url('/profile3.jpg')] hover:bg-[url('/profile4.jpg')] duration-500 bg-cover bg-center lg:block hidden" />
+        
       </section>
+<div id="contact"></div>
     </>
     
   );

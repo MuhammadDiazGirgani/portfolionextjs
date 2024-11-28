@@ -71,36 +71,3 @@ body {
     }
 }
 
-@media screen and (max-width: 586px) {
-    .profil2 {
-        margin-top: -2273px;
-        margin-left: 200px;
-    }
-    #contact {
-        margin-top: -15px;
-    }
-    #projects {
-        margin-top: 10px;
-    }
-}
-
-@media screen and (max-width: 420px) {
-    .profil2 {
-        margin-top: -2273px;
-        margin-left: 110px;
-    }
-}
-
-@media screen and (max-width: 441px) {
-    .profil2 {
-        margin-top: -2273px;
-        margin-left: 215px;
-    }
-}
-
-@media screen and (max-width: 435px) {
-    .profil2 {
-        margin-top: -2273px;
-        margin-left: 205px;
-    }
-}
