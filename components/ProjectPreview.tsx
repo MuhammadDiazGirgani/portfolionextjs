@@ -2,7 +2,6 @@ import React from "react";
 import Arrow from "../public/arrow.svg";
 import { motion } from "framer-motion";
 
-
 interface Props {
   name?: string | undefined;
   description?: string | undefined;
@@ -10,7 +9,6 @@ interface Props {
   bgColor?: string | undefined;
   dark?: boolean | undefined;
 }
-
 
 const ProjectPreview: React.FC<Props> = ({
   name = "Block name",
@@ -27,24 +25,37 @@ const ProjectPreview: React.FC<Props> = ({
       whileInView="animate"
       variants={PreviewAnimation}
     >
-      
       <div
-        className={`h-full w-100 px-10 py-8 bg-cover bg-no-repeat bg-center `}
-        style={{ backgroundImage: `url('${imageUrl}')` }}
+        className="h-full w-full relative group"
+        style={{
+          backgroundImage: `url('${imageUrl}')`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
       >
-        <div className="flex justify-between">
+        {/* Gambar latar belakang */}
+        <div
+          className="absolute inset-0 bg-cover bg-center transition-all duration-300 group-hover:z-10"
+          style={{
+            backgroundImage: `url('${imageUrl}')`,
+            zIndex: 0, // Gambar di belakang konten
+          }}
+        ></div>
+
+        {/* Konten */}
+        <div
+          className="relative flex flex-col justify-between h-full px-10 py-8"
+          style={{ zIndex: 2 }} // Konten di depan
+        >
           <div>
-            <h2 className="font-medium text-lg dark:text-white">{name}</h2>
-            <p className="text-sm text-zinc-500 dark:text-zinc-300">
-              {description}
-            </p>
+            <h2 className="font-medium text-lg text-white">{name}</h2>
+            <p className="text-sm text-zinc-300">{description}</p>
           </div>
           <div className="h-12 w-12 bg-white rounded-full flex justify-center items-center cursor-pointer">
             <Arrow className="w-20 h-6" />
           </div>
         </div>
       </div>
-    
     </motion.div>
   );
 };
