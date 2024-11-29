@@ -1,14 +1,14 @@
 import Head from "next/head";
 import Navbar from "../../components/Navbar";
 import ProjectPreview from "../../components/ProjectPreview";
-import Dribbble from "../../public/dribbble.svg";
+import Github from "../../public/github.svg";
 import Instagram from "../../public/instagram.svg";
 import Twitter from "../../public/twitter.svg";
 import Linkedin from "../../public/linkedin.svg";
 import SocialButton from "../../components/SocialButton";
 import Tilt from 'react-parallax-tilt';
 import Image from "next/image"
-
+import MusicPlayerButton from "../../components/MusicPlayerButton";
 
 export default function Home() {
   return (
@@ -25,7 +25,7 @@ export default function Home() {
 
       <section className="grid grid-cols-1 lg:grid-cols-[2fr_1fr] gap-4 mb-4 " >
         <div className="bg-zinc-400 h-[30rem] rounded-3xl min-h-max p-10 flex flex-col gap-7 bg-cover kolom ">
-          <h1 className="text-4xl font-semibold lg:text-5xl">
+          <h1 className="text-3xl font-semibold lg:text-5xl">
             Hello, I&lsquo;m  Diaz , Web Development and Designer Web.
           </h1>
           <p className="flex-1">
@@ -41,7 +41,7 @@ export default function Home() {
             <div className="flex items-center gap-4" >
               <a href="https://github.com/MuhammadDiazGirgani" target="_blank">
                 <SocialButton bgColor="github">
-                <Dribbble className="w-5 h-5" />
+                <Github className="w-7 h-7" />
               </SocialButton>
               </a>
               <a href="https://www.instagram.com/diazzgirgani/" target="_blank">
@@ -59,12 +59,15 @@ export default function Home() {
                 <Linkedin className="w-5 h-5" />
               </SocialButton>
               </a>
+              <div className="flex items-center gap-4 lg:hidden">
+              <MusicPlayerButton />
+    </div>
             </div>
           </div>
         </div>
         <div className="grid grid-cols-2 sm:grid-cols-1 md:grid-cols-1 gap-1">
-        <div className="h-[17rem] w-[11.5rem] rounded-3xl lg:h-[30rem] lg:w-[23rem] p-8 bg-[url('/profile.jpg')] hover:bg-[url('/profile2.jpg')] duration-500 bg-cover bg-center " />
-  <div className="h-[17rem] w-[11.5rem] rounded-3xl lg:h-[30rem] lg:w-[23rem] p-8 bg-[url('/profile3.jpg')] hover:bg-[url('/profile4.jpg')] duration-500 bg-cover bg-center lg:hidden" />
+        <div className="h-[17rem] w-[10rem] rounded-3xl lg:h-[30rem] lg:w-[23rem] p-8 bg-[url('/profile.jpg')] hover:bg-[url('/profile2.jpg')] duration-500 bg-cover bg-center " />
+  <div className="h-[17rem] w-[10rem] rounded-3xl lg:h-[30rem] lg:w-[23rem] p-8 bg-[url('/profile3.jpg')] hover:bg-[url('/profile4.jpg')] duration-500 bg-cover bg-center lg:hidden" />
 </div>
 
       </section>
@@ -74,8 +77,8 @@ export default function Home() {
  
       <Tilt> 
         <a href="https://www.turnedin.id/home/" target="_blank">
+
         <ProjectPreview
-       
           name="Turnedin"
           description="Turnitin web is specifically for students with friendly prices using ReactJS and Bootstrap 5"
           imageUrl="/project-1.png"
@@ -83,11 +86,9 @@ export default function Home() {
           dark
         /></a>
     </Tilt>
-  
     <Tilt>
         <a href="https://datamining-regresi-linear-dg.000webhostapp.com/" target="_blank">
         <ProjectPreview
-        
           name="Datamining App"
           description="web application for linear regression calculations built using html, css, javascript, php, mysql, bootstrap."
           imageUrl="/project-2.png"
@@ -99,7 +100,6 @@ export default function Home() {
         <Tilt>
         <a href="https://reactmovielist.vercel.app/" target="_blank">
         <ProjectPreview
-        
           name="Movielist "
           description="web movielist to see the latest film list by fetching the TMDB API using ReactJS and Bootstrap"
           imageUrl="/project-3.png"
@@ -108,6 +108,7 @@ export default function Home() {
         />
         </a>
         </Tilt>
+
         <section className="grid grid-cols-1 lg:grid-cols-40 gap-10 " id="skills">
         <h1 className="text-3xl font-semibold lg:text-3xl text-center ">Skills</h1>
   <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-4 gap-4">
@@ -130,9 +131,9 @@ export default function Home() {
           className="flex flex-col items-center justify-center shadow-lg"
           style={{
             backgroundColor: skill.bgColor,
-            width: "120px", // Lebar tetap
-            height: "120px", // Panjang tetap
-            borderRadius: "20px", // Rounded corners
+            width: "105px",
+            height: "105px",
+            borderRadius: "20px",
           }}
         >
           <Image
@@ -160,8 +161,9 @@ export default function Home() {
           Want to work together?
           </h3>
           <p className="flex-1">
-          Feel free to reach out for collaborations or just a friendly hello
-          diazdgirgani93@gmail.com
+          Feel free to contact me to collaborate or just ask questions<br></br>
+          <a href="mailto:diazdgirgani93@gmail.com">
+          diazdgirgani93@gmail.com</a>
           </p>
     
           <div className="flex flex-col lg:flex-row items-center gap-4 justify-self-end" >
@@ -172,7 +174,7 @@ export default function Home() {
                 
               <a href="https://github.com/MuhammadDiazGirgani" target="_blank">
                 <SocialButton bgColor="github">
-                <Dribbble className="w-5 h-5" />
+                <Github className="w-7 h-7" />
               </SocialButton>
               </a>
               <a href="https://www.instagram.com/diazzgirgani/" target="_blank">
@@ -190,42 +192,14 @@ export default function Home() {
                 <Linkedin className="w-5 h-5" />
               </SocialButton>
               </a>
-              
-            </div>
-                  {/* Tombol Play Music */}
-    <div className="flex items-center gap-4">
-      <button
-        className="bg-green-500 text-white font-medium py-1 px-12 rounded-full w-60 lg:w-auto hover:bg-green-700 transition duration-500"
-        onClick={() => {
-          const audio = document.getElementById("audioPlayer") as HTMLAudioElement;
-          if (audio.paused) {
-            audio.play();
-          } else {
-            audio.pause();
-          }
-        }}
-      >
-        Play Music
-      </button>
-
-
-      <span id="musicStatus" className="text-lg text-gray-700">
-
-      </span>
+              <div className=" items-center gap-4 lg:block hidden">
+              <MusicPlayerButton />
     </div>
 
-    <audio
-      id="audioPlayer"
-      src="/music/soundtrack.mp3"
-      onPlay={() => {
-        const status = document.getElementById("musicStatus");
-        if (status) status.textContent = "Playing...";
-      }}
-      onPause={() => {
-        const status = document.getElementById("musicStatus");
-        if (status) status.textContent = "Paused.";
-      }}
-    />
+
+            </div>
+                
+
           </div>
         </div>
         <div className="h-[17rem] w-[11.5rem] rounded-3xl lg:h-[30rem] lg:w-[23rem] p-8 bg-[url('/profile3.jpg')] hover:bg-[url('/profile4.jpg')] duration-500 bg-cover bg-center lg:block hidden" />
